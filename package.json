@@ -1,0 +1,33 @@
+{
+	"name": "js_for_studying",
+	"version": "1.0.0",
+	"description": "",
+	"source": "src/index.html",
+	"browserslist": "> 0.5%, last 2 versions, not dead",
+	"scripts": {
+		"dev": "parcel src/index.html",
+		"build": "parcel build src/index.html"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NNaumenko83/JS_for_studying.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/NNaumenko83/JS_for_studying/issues"
+	},
+	"homepage": "https://github.com/NNaumenko83/JS_for_studying#readme",
+	"dependencies": {
+		"joi": "^17.7.0",
+		"shortid": "^2.2.16",
+		"uuid": "^9.0.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.19.3",
+		"@babel/core": "^7.20.2",
+		"@babel/preset-env": "^7.20.2",
+		"parcel": "^2.8.0"
+	}
+}
