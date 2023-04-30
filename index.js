@@ -1453,6 +1453,8 @@
 // const c = { key: "c" };
 
 // a[b] = 123;
+// // console.log(a[b]);
+// // console.log(Object.keys(a));
 // a[c] = 456;
 
 // console.log(a[b]);
@@ -1469,3 +1471,199 @@
 // };
 
 // obj.sing();
+
+// console.log("a:", a);
+// var a = 10;
+
+// const objectA = { a: 1, b: 2, c: { d: 1, e: [1, 2, 3, 4] } };
+// console.log("objectA:", objectA);
+
+// objectB = { ...objectA };
+// console.log("objectB:", objectB);
+
+// const objectC = Object.assign(objectA);
+// console.log("objectC:", objectC);
+// console.log(objectA.c === objectC.c);
+
+// const objectD = JSON.parse(JSON.stringify(objectA));
+// console.log("objectD:", objectD);
+// console.log(objectA.c === objectD.c);
+
+// let a = 5;
+// let b = 6;
+// console.log("a:", a);
+// console.log("b:", b);
+
+// [a, b] = [b, a];
+// console.log("a:", a);
+// console.log("b:", b);
+
+// console.log([1, 2, 3, 4][(1, 2, 3)]);
+
+// const num = [1, 2, 3];
+// num[3] = num;
+// console.log("num:", num);
+
+// const a = {
+// 	b: 3,
+// 	c() {
+// 		console.log(this.b);
+// 	},
+// };
+
+// a.c();
+
+// const d = a.c;
+// console.log(d === a.c);
+
+// // const d = a;
+// // d.b = 2;
+
+// // const newObj = JSON.parse(JSON.stringify(a));
+// // console.log("newObj:", newObj);
+
+// console.log(false == 0);
+// console.log(false === 0);
+
+// function prime(num) {
+// 	const arr = [];
+// 	for (let i = 2; i <= num; i += 1) {
+// 		// console.log("i:", i);
+
+// 		for (let k = 2; k <= i; k += 1) {
+// 			if (i % k === 0 && k < i) {
+// 				break;
+// 			} else if (i % k === 0) {
+// 				arr.push(i);
+// 				break;
+// 			}
+// 		}
+// 	}
+
+// 	return arr;
+// 	// Generate an array containing every prime number between 0 and the num specified (inclusive)
+// }
+
+// prime(11);
+// prime(0);
+// prime(1);
+// prime(2);
+// // 11 => [2, 3, 5, 7, 11]
+
+// function sumIntervals(intervals) {
+// 	// Об'єднати перетинаючіся інтервали
+// 	// Сортуємо масиви
+// 	intervals.sort((a, b) => a[0] - b[0]);
+// 	console.log("intervals:", intervals);
+
+// 	let merged = [intervals[0]];
+// 	console.log("merged:", merged);
+
+// 	for (let current of intervals) {
+// 		let previous = merged[merged.length - 1];
+// 		console.log("previous:", previous);
+
+// 		if (current[0] <= previous[1]) {
+// 			previous[1] = Math.max(previous[1], current[1]);
+// 		} else {
+// 			merged.push(current);
+// 		}
+// 	}
+
+// 	// Обчислити суму довжин інтервалів
+// 	let sum = 0;
+// 	for (let interval of merged) {
+// 		sum += interval[1] - interval[0];
+// 	}
+// 	return sum;
+// }
+
+// const test1 = [[1, 5]];
+
+// function sumIntervals(intervals) {
+// 	intervals.sort((a, b) => a[0] - b[0]);
+// 	console.log("intervals:", intervals);
+// 	const merged = [intervals[0]];
+// 	console.log("merged:", merged);
+// 	for (currentInterval of intervals) {
+// 		console.log("currentInterval:", currentInterval);
+// 		const prevInterval = merged[merged.length - 1];
+// 		console.log("prevInterval:", prevInterval);
+// 		if (currentInterval[0] <= prevInterval[1]) {
+// 			prevInterval[1] = Math.max(currentInterval[1], prevInterval[1]);
+// 		} else {
+// 			merged.push(currentInterval);
+// 		}
+// 	}
+
+// 	let sum = 0;
+// 	for (current of merged) {
+// 		sum += current[1] - current[0];
+// 	}
+// 	console.log(sum);
+
+// 	return sum;
+// }
+
+// const test2 = [
+// 	[1, 5],
+// 	[4, 10],
+// 	[20, 30],
+// 	[15, 18],
+// 	// [0, 100],
+// ];
+// sumIntervals(test1);
+// sumIntervals(test2);
+// sumIntervals(test1), 4;
+// sumIntervals(test2), 8;
+
+//  const test1 = [
+// 		[1, 5],
+// 		[1, 5],
+//  ];
+//  const test2 = [
+// 		[1, 4],
+// 		[7, 10],
+// 		[3, 5],
+//  ];
+//  assert.strictEqual(sumIntervals(test1), 4);
+//  assert.strictEqual(sumIntervals(test2), 7);
+
+/*Write a function that calculates the least common multiple of its arguments; 
+each argument is assumed to be a non-negative integer. 
+In the case that there are no arguments (or the provided array in compiled languages is empty), return 1. 
+If any argument is 0, return 0.*/
+
+var lcm = function (...args) {
+	if (args.length === 0) {
+		return 0;
+	}
+	if (args.includes(0)) {
+		return 0;
+	}
+	args.sort((a, b) => a - b);
+
+	const multValue = args.reduce((acc, elem, index, array) => {
+		if (elem % acc === 0) {
+			acc = elem;
+			return acc;
+		}
+		let temp = elem;
+
+		while (temp % acc !== 0) {
+			temp += elem;
+		}
+		[temp, acc] = [acc, temp];
+		return acc;
+	});
+
+	return multValue;
+};
+
+// Test.assertEquals(lcm(2, 5), 10);
+// Test.assertEquals(lcm(2, 3, 4), 12);
+// Test.assertEquals(lcm(9), 9);
+// console.log(lcm());
+// console.log(lcm(0));
+// console.log(lcm(9));
+console.log(lcm(5, 6, 7, 9, 6, 9, 18, 4, 5, 15, 15, 10, 17, 7));
