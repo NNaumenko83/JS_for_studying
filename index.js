@@ -1634,31 +1634,31 @@ each argument is assumed to be a non-negative integer.
 In the case that there are no arguments (or the provided array in compiled languages is empty), return 1. 
 If any argument is 0, return 0.*/
 
-var lcm = function (...args) {
-	if (args.length === 0) {
-		return 0;
-	}
-	if (args.includes(0)) {
-		return 0;
-	}
-	args.sort((a, b) => a - b);
+// var lcm = function (...args) {
+// 	if (args.length === 0) {
+// 		return 0;
+// 	}
+// 	if (args.includes(0)) {
+// 		return 0;
+// 	}
+// 	args.sort((a, b) => a - b);
 
-	const multValue = args.reduce((acc, elem, index, array) => {
-		if (elem % acc === 0) {
-			acc = elem;
-			return acc;
-		}
-		let temp = elem;
+// 	const multValue = args.reduce((acc, elem, index, array) => {
+// 		if (elem % acc === 0) {
+// 			acc = elem;
+// 			return acc;
+// 		}
+// 		let temp = elem;
 
-		while (temp % acc !== 0) {
-			temp += elem;
-		}
-		[temp, acc] = [acc, temp];
-		return acc;
-	});
+// 		while (temp % acc !== 0) {
+// 			temp += elem;
+// 		}
+// 		[temp, acc] = [acc, temp];
+// 		return acc;
+// 	});
 
-	return multValue;
-};
+// 	return multValue;
+// };
 
 // Test.assertEquals(lcm(2, 5), 10);
 // Test.assertEquals(lcm(2, 3, 4), 12);
@@ -1666,4 +1666,90 @@ var lcm = function (...args) {
 // console.log(lcm());
 // console.log(lcm(0));
 // console.log(lcm(9));
-console.log(lcm(5, 6, 7, 9, 6, 9, 18, 4, 5, 15, 15, 10, 17, 7));
+// console.log(lcm(5, 6, 7, 9, 6, 9, 18, 4, 5, 15, 15, 10, 17, 7));
+
+// const arr = Array.from(new Array(6));
+// console.log("arr:", arr);
+// console.log(Array.isArray(arr));
+
+// https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1/train/javascript
+
+// snail = function (array) {
+// 	const resArray = [];
+
+// 	// console.log(array.length);
+
+// 	while (array.length > 0) {
+// 		// STEP1
+// 		// console.log("STEP1");
+// 		const arr = array.splice(0, 1);
+// 		// console.log("arr:", arr);
+// 		for (let i = 0; i < arr[0].length; i += 1) {
+// 			resArray.push(arr[0][i]);
+
+// 			// console.log("resArray:", resArray);
+// 		}
+// 		// console.log("array:", array);
+// 		// console.log("resArray:", resArray);
+
+// 		// STEP2
+// 		// console.log("STEP2");
+// 		if (array.length > 1) {
+// 			for (let i = 0; i < array.length - 1; i += 1) {
+// 				resArray.push(array[i].pop());
+// 			}
+// 		}
+// 		// console.log("array:", array);
+// 		// console.log("resArray:", resArray);
+// 		// STEP3
+// 		// console.log("STEP3");
+// 		if (array.length >= 1) {
+// 			for (let i = array[array.length - 1].length - 1; i >= 0; i -= 1) {
+// 				resArray.push(array[array.length - 1][i]);
+// 			}
+// 		}
+// 		array.splice(array.length - 1, 1);
+// 		// console.log("resArray:", resArray);
+// 		// console.log("array:", array);
+// 		// STEP4\
+// 		// console.log("STEP4");
+// 		if (array.length >= 2) {
+// 			for (let i = array.length - 1; i > 0; i -= 1) {
+// 				resArray.push(array[i].shift());
+// 			}
+// 		}
+// 		// console.log("STEP4 array:", array);
+// 	}
+
+// 	return resArray;
+
+// 	// enjoy
+// };
+
+// const res = snail([
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]);
+
+// console.log(res);
+
+// const res2 = snail([
+// 	[1, 2, 3, 4, 5],
+// 	[6, 7, 8, 9, 10],
+// 	[11, 12, 13, 14, 15],
+// 	[16, 17, 18, 19, 20],
+// 	[21, 22, 23, 24, 25],
+// ]);
+// console.log("res2:", res2);
+
+// const res3 = snail([
+// 	[1, 2, 3, 4, 5, 6],
+// 	[20, 21, 22, 23, 24, 7],
+// 	[19, 32, 33, 34, 25, 8],
+// 	[18, 31, 36, 35, 26, 9],
+// 	[17, 30, 29, 28, 27, 10],
+// 	[16, 15, 14, 13, 12, 11],
+// ]);
+
+// console.log("res3:", res3);
