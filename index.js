@@ -1754,41 +1754,75 @@ If any argument is 0, return 0.*/
 
 // console.log("res3:", res3);
 
-function isPangram(string) {
-	console.log("string:", string);
-	const quantutyLetters = 26;
-	let array = [];
+// function isPangram(string) {
+// 	console.log("string:", string);
+// 	const quantutyLetters = 26;
+// 	let array = [];
 
-	const modifiedSentence = string.toLowerCase().replace(/[^\p{L}]+/gu, " ");
-	console.log("modifiedSentence:", modifiedSentence);
-	const lettersArray = [...modifiedSentence].filter(item => {
-		if (!item.trim()) {
-			return;
-		}
-		return item;
-	});
+// 	const modifiedSentence = string.toLowerCase().replace(/[^\p{L}]+/gu, " ");
+// 	console.log("modifiedSentence:", modifiedSentence);
+// 	const lettersArray = [...modifiedSentence].filter(item => {
+// 		if (!item.trim()) {
+// 			return;
+// 		}
+// 		return item;
+// 	});
 
-	for (let i = 0; i < lettersArray.length; i += 1) {
-		if (i === 0) {
-			array.push(lettersArray[0]);
-		}
-		if (array.length > 0) {
-			const findingLetter = array.some(item => item === lettersArray[i]);
-			if (!findingLetter) {
-				array.push(lettersArray[i]);
-			}
-		}
-	}
+// 	for (let i = 0; i < lettersArray.length; i += 1) {
+// 		if (i === 0) {
+// 			array.push(lettersArray[0]);
+// 		}
+// 		if (array.length > 0) {
+// 			const findingLetter = array.some(item => item === lettersArray[i]);
+// 			if (!findingLetter) {
+// 				array.push(lettersArray[i]);
+// 			}
+// 		}
+// 	}
 
-	console.log(array);
+// 	console.log(array);
 
-	if (array.length === 26) {
-		return true;
-	}
-	return false;
-}
+// 	if (array.length === 26) {
+// 		return true;
+// 	}
+// 	return false;
+// }
 
-const string = "The quick brown fox jumps over the lazy dog.";
+// const string = "The quick brown fox jumps over the lazy dog.";
 
-isPangram(string);
-console.log("isPangram(string);:", isPangram(string));
+// isPangram(string);
+// console.log("isPangram(string);:", isPangram(string));
+
+// let a = 5;
+// let b = 10;
+// [a, b] = [b, a];
+// console.log("a:", a);
+// console.log("b:", b);
+
+// function isIsogram(str = "") {
+// 	const arrayLetters = [...str.toLowerCase()];
+
+// 	for (let i = 0; i < arrayLetters.length; i += 1) {
+// 		const array = arrayLetters.filter(item => item === arrayLetters[i]);
+
+// 		if (array.length > 1) {
+// 			return false;
+// 		}
+// 	}
+
+// 	return true;
+// }
+
+// console.log(isIsogram("isogram"));
+
+var number = function (busStops) {
+	// Good Luck!
+};
+
+console.log(
+	number([
+		[10, 0],
+		[3, 5],
+		[5, 8],
+	]),
+);
