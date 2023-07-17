@@ -1842,3 +1842,55 @@ The second value in the first pair in the array is 0, since the bus is empty in 
 // 		[5, 8],
 // 	]),
 // );
+
+// bubble sort
+
+const array = [3, 2, 1];
+
+const bubbleSort = arr => {
+	for (let i = 0; i < arr.length; i += 1) {
+		console.log("LOOP:", i);
+		for (let k = 0; k < arr.length - i; k += 1) {
+			console.log("arr[k] :", arr[k]);
+			console.log("arr[k + 1]:", arr[k + 1]);
+			if (arr[k] > arr[k + 1]) {
+				[arr[k], arr[k + 1]] = [arr[k + 1], arr[k]];
+			}
+		}
+	}
+	return arr;
+};
+
+console.log(bubbleSort(array));
+
+// let bubbleSort = inputArr => {
+// 	let len = inputArr.length;
+// 	for (let i = 0; i < len; i++) {
+// 		for (let j = 0; j < len; j++) {
+// 			if (inputArr[j] > inputArr[j + 1]) {
+// 				let tmp = inputArr[j];
+// 				inputArr[j] = inputArr[j + 1];
+// 				inputArr[j + 1] = tmp;
+// 			}
+// 		}
+// 	}
+// 	return inputArr;
+// };
+
+// // let bubbleSort = array => {
+// // 	const len = array.length;
+// // 	for (let i = 0; i < len; i += 1) {
+// // 		console.log("LOOP:", i);
+// // 		for (let j = 0; j < len - i - 1; j += 1) {
+// // 			console.log("array[j]:", array[j]);
+// // 			console.log("array[j + 1]", array[j + 1]);
+// // 			if (array[j] > array[j + 1]) {
+// // 				console.log(array[j], ">", array[j + 1]);
+// // 				let temp = array[j];
+// // 				array[j] = array[j + 1];
+// // 				array[j + 1] = temp;
+// // 			}
+// // 		}
+// // 	}
+// // 	return array;
+// // };
