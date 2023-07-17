@@ -1845,23 +1845,23 @@ The second value in the first pair in the array is 0, since the bus is empty in 
 
 // bubble sort
 
-const array = [3, 2, 1];
+// const array = [3, 2, 1];
 
-const bubbleSort = arr => {
-	for (let i = 0; i < arr.length; i += 1) {
-		console.log("LOOP:", i);
-		for (let k = 0; k < arr.length - i; k += 1) {
-			console.log("arr[k] :", arr[k]);
-			console.log("arr[k + 1]:", arr[k + 1]);
-			if (arr[k] > arr[k + 1]) {
-				[arr[k], arr[k + 1]] = [arr[k + 1], arr[k]];
-			}
-		}
-	}
-	return arr;
-};
+// const bubbleSort = arr => {
+// 	for (let i = 0; i < arr.length; i += 1) {
+// 		console.log("LOOP:", i);
+// 		for (let k = 0; k < arr.length - i; k += 1) {
+// 			console.log("arr[k] :", arr[k]);
+// 			console.log("arr[k + 1]:", arr[k + 1]);
+// 			if (arr[k] > arr[k + 1]) {
+// 				[arr[k], arr[k + 1]] = [arr[k + 1], arr[k]];
+// 			}
+// 		}
+// 	}
+// 	return arr;
+// };
 
-console.log(bubbleSort(array));
+// console.log(bubbleSort(array));
 
 // let bubbleSort = inputArr => {
 // 	let len = inputArr.length;
@@ -1894,3 +1894,15 @@ console.log(bubbleSort(array));
 // // 	}
 // // 	return array;
 // // };
+
+// factorial
+
+// const factorail = num => {
+// 	if (num === 0 || num === 1) {
+// 		return 1;
+// 	}
+
+// 	return num * factorail(num - 1);
+// };
+
+// console.log(factorail(6));
