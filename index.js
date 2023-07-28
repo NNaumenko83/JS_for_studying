@@ -1927,4 +1927,104 @@ Example(Input --> Output)
 
 // console.log(findNeedle(arr));
 
+// Merged String Checker
+// At a job interview, you are challenged to write an algorithm to check if a given string, s,
+// can be formed from two other strings, part1 and part2.
 
+// The restriction is that the characters in part1 and part2
+// should be in the same order as in s.
+
+// The interviewer gives you the following example and tells you to figure out the rest from the given test cases.
+
+function isMerge(s = "", part1 = "", part2 = "") {
+	const str = part1 + part2;
+	let part1Array = [...part1];
+	console.log("part1Array:", part1Array);
+	let part2Array = [...part2];
+	console.log("part2Array:", part2Array);
+
+	console.log("s.length !== str.length:", s.length === str.length);
+	if (s.length !== str.length) {
+		return false;
+	}
+
+	for (let i = 0; i < s.length; i += 1) {
+		if (part1Array.indexOf(s[i]) === 0 && part2Array.indexOf(s[i]) === 0) {
+			if (
+				!part1Array[part1Array.indexOf(s[i]) + 1] &&
+				!part1Array.length < part1Array.indexOf(s[i]) + 1
+			) {
+				part2Array.splice(0, 1);
+			} else if (
+				!part2Array[part2Array.indexOf(s[i]) + 1] &&
+				!part2Array.length < part2Array.indexOf(s[i]) + 1
+			) {
+				part1Array.splice(0, 1);
+			} else {
+				for (let k = 0; (k += 1); k < part1Array.length) {
+					console.log(part1Array[k]);
+				}
+			}
+
+			continue;
+		}
+
+		if (part1Array.indexOf(s[i]) === 0) {
+			part1Array.splice(0, 1);
+			continue;
+		} else if (part2Array.indexOf(s[i]) === 0) {
+			part2Array.splice(0, 1);
+			continue;
+		} else {
+			return false;
+		}
+	}
+
+	if (part1Array.length === 0 && part1Array.length === 0) {
+		return true;
+	}
+
+	return false;
+}
+
+console.log(isMerge("Bananas from Bahamas", "Bahas", "Bananas from am"));
+
+// for s = "Bananas from Bahamas"
+// part1 = "Bahas"
+// part2 = "Bananas from am"
+// : expected false to equal true
+// Completed in 1ms
+// can handle some random cases
+// can handle some even more random cases
+// for s = ":DP:Cg!&cf4HSCi^YT[T"O"
+// part1 = ":D:Cg!cfSC^T[""
+// part2 = "P&4HiYTO"
+// : expected false to equal true
+// Completed in 1ms
+// can handle some tricky random cases
+// for s = "aTRHEaTf4;BuF9Ha`$L"
+// part1 = "aTf4;BuF"
+// part2 = "aTRHE9Ha`$L"
+// : expected false to equal true
+
+// console.log(isMerge("xcyc", "xc", "yc"));
+// console.log(isMerge("xcyc", "yc", "xc"));
+// console.log(isMerge("xcyc", "xc", "cy")); //true
+// console.log(isMerge("xcyc", "cy", "xc"));
+
+// console.log(isMerge("codewars", "code", "wars"));
+// console.log(isMerge("codewars", "cdwr", "oeas"));
+// console.log(isMerge("Making progress", "Mak pross", "inggre"));
+// console.log(isMerge("codewars", "code", "code"));
+// console.log(isMerge("More progress", "More ess", "pro"));
+
+//    doTest(true, "xcyc", "xc", "yc");
+// 		doTest(true, "xcyc", "yc", "xc");
+// 		doTest(true, "xcyc", "xc", "cy");
+// 		doTest(true, "xcyc", "cy", "xc");
+
+// 		doTest(true, "codewars", "code", "wars");
+// 		doTest(true, "codewars", "cdwr", "oeas");
+// 		doTest(true, "Making progress", "Mak pross", "inggre");
+// 		doTest(false, "codewars", "code", "code");
+// 		doTest(false, "More progress", "More ess", "pro");
