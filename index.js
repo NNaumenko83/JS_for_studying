@@ -2165,41 +2165,77 @@ Example(Input --> Output)
 // 		doTest(false, "More progress", "More ess", "pro");
 
 // countSheeps;
-function countSheeps(arrayOfSheep = []) {
-	return arrayOfSheep.reduce((acc, item) => {
-		console.log("acc:", acc);
-		if (!item) {
-			return acc;
-		}
-		return (acc += 1);
-	}, 0);
-}
+// function countSheeps(arrayOfSheep = []) {
+// 	return arrayOfSheep.reduce((acc, item) => {
+// 		console.log("acc:", acc);
+// 		if (!item) {
+// 			return acc;
+// 		}
+// 		return (acc += 1);
+// 	}, 0);
+// }
 
-const array1 = [
-	true,
-	true,
-	true,
-	false,
-	true,
-	true,
-	true,
-	true,
-	true,
-	false,
-	true,
-	false,
-	true,
-	false,
-	false,
-	true,
-	true,
-	true,
-	true,
-	true,
-	false,
-	false,
-	true,
-	true,
-];
+// const array1 = [
+// 	true,
+// 	true,
+// 	true,
+// 	false,
+// 	true,
+// 	true,
+// 	true,
+// 	true,
+// 	true,
+// 	false,
+// 	true,
+// 	false,
+// 	true,
+// 	false,
+// 	false,
+// 	true,
+// 	true,
+// 	true,
+// 	true,
+// 	true,
+// 	false,
+// 	false,
+// 	true,
+// 	true,
+// ];
 
-console.log(countSheeps(array1));
+// console.log(countSheeps(array1));
+
+// Sum of odd numbers
+//https://www.codewars.com/kata/55fd2d567d94ac3bc9000064/train/javascript
+
+// function rowSumOddNumbers(n) {
+// 	const arr = [];
+
+// 	for (let i = 0; i < n; i += 1) {
+// 		arr.push(Array(i + 1));
+// 		for (let k = 0; k < arr.length; k += 1) {
+// 			if (i === 0 && k === 0) {
+// 				arr[i][k] = 1;
+
+// 				continue;
+// 			}
+
+// 			if (k === 0) {
+// 				arr[i][k] = arr[i - 1][arr[i - 1].length - 1] + 2;
+// 				continue;
+// 			}
+
+// 			arr[i][k] = arr[i][k - 1] + 2;
+// 		}
+// 	}
+
+// 	return arr[n - 1].reduce((acc, item) => (acc += item), 0);
+// }
+
+// rowSumOddNumbers(1);
+// console.log("rowSumOddNumbers:", rowSumOddNumbers(42));
+
+// =======
+// function rowSumOddNumbers(n) {
+// 	return Math.pow(n, 3);
+// }
+// ======
