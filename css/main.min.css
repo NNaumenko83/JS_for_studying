@@ -1,1 +1,1 @@
-body{background-color:red}/*# sourceMappingURL=main.min.css.map */
+.grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));gap:5px}.grid>div{background:gray;padding:5px;border-radius:10px}/*# sourceMappingURL=main.min.css.map */
