@@ -1936,33 +1936,168 @@ Example(Input --> Output)
 
 // The interviewer gives you the following example and tells you to figure out the rest from the given test cases.
 
-function isMerge(s = "", part1 = "", part2 = "") {
+// function isMerge(s = "", part1 = "", part2 = "") {
+// 	const str = part1 + part2;
+// 	let part1Array = [...part1];
+// 	let part2Array = [...part2];
+
+// 	if (s.length !== str.length) {
+// 		return false;
+// 	}
+
+// 	for (let i = 0; i < s.length; i += 1) {
+// 		// console.log("LOOP::", i);
+// 		// console.log("part1Array:", part1Array);
+// 		// console.log("part2Array:", part2Array);
+// 		if (part1Array.indexOf(s[i]) === 0 && part2Array.indexOf(s[i]) === 0) {
+// 			// console.log("s[i]:", s[i]);
+// 			// console.log("Case 1");
+// 			if (!part1Array.length === 1) {
+// 				// console.log("!part1Array.length === 1:", !part1Array.length === 1);
+// 				part1Array.splice(0, 1);
+// 				continue;
+// 			}
+// 			if (!part2Array.length === 1) {
+// 				console.log("!part2Array.length === 1:", !part2Array.length === 1);
+// 				part2Array.splice(0, 1);
+// 				continue;
+// 			}
+
+// 			// console.log("Ми пішли в цикл");
+
+// 			let indexArr1 = null;
+// 			let indexArr2 = null;
+// 			for (let k = i + 1; k < s.length; k += 1) {
+// 				// console.log("k:", k);
+// 				// console.log("part1Array:", part1Array);
+// 				// console.log("part2Array:", part2Array);
+// 				// console.log("s[k]", s[k]);
+// 				indexArr1 = part1Array.findIndex(item => {
+// 					return item === s[k];
+// 				});
+// 				// console.log("indexArr1:", indexArr1);
+// 				indexArr2 = part2Array.findIndex(item => item === s[k]);
+// 				// console.log("indexArr2:", indexArr2);
+// 				if (indexArr1 === indexArr2) {
+// 					// console.log("indexArr1 === indexArr2:", indexArr1 === indexArr2);
+// 					continue;
+// 				}
+// 				if (indexArr1 > indexArr2 && indexArr2 === -1) {
+// 					// console.log(
+// 					// 	"indexArr1 > indexArr2 && indexArr2 === -1:",
+// 					// 	indexArr1 > indexArr2 && indexArr2 === -1,
+// 					// );
+
+// 					part1Array.splice(0, 1);
+// 					break;
+// 				}
+// 				if (indexArr1 < indexArr2 && indexArr1 === -1) {
+// 					// console.log(
+// 					// 	"indexArr1 < indexArr2 && indexArr1 === -1:",
+// 					// 	indexArr1 < indexArr2 && indexArr1 === -1,
+// 					// );
+
+// 					// console.log("part2Array[0]:", part2Array[0]);
+// 					// console.log("part2Array[k]:", part2Array[k]);
+// 					// console.log("part2Array:", part2Array);
+// 					part2Array.splice(0, 1);
+// 					// console.log("part2Array.splice(0, k + 1);:", part2Array.splice(0, k + 1));
+
+// 					// console.log("part2Array:", part2Array);
+// 					break;
+// 				}
+// 				if (indexArr1 > indexArr2) {
+// 					// console.log("indexArr1 > indexArr2:", indexArr1 > indexArr2);
+// 					part2Array.splice(0, 1);
+// 					break;
+// 				}
+// 				if (indexArr1 < indexArr2) {
+// 					// console.log("indexArr1 < indexArr2:", indexArr1 < indexArr2);
+// 					// console.log("indexArr1:", indexArr1);
+// 					// console.log("indexArr2:", indexArr2);
+// 					part1Array.splice(0, 1);
+// 					// console.log("part1Array:", part1Array);
+// 					break;
+// 				}
+// 			}
+
+// 			continue;
+// 		}
+
+// 		// console.log("Continue LOOP:", i);
+
+// 		// console.log("s[i]:", s[i]);
+// 		if (part1Array.indexOf(s[i]) === 0) {
+// 			part1Array.splice(0, 1);
+// 			continue;
+// 		} else if (part2Array.indexOf(s[i]) === 0) {
+// 			part2Array.splice(0, 1);
+// 			continue;
+// 		} else {
+// 			// console.log("Aaaaaaaas");
+// 			return false;
+// 		}
+// 	}
+
+// 	if (part1Array.length === 0 && part1Array.length === 0) {
+// 		return true;
+// 	}
+
+// 	// console.log("part1Array:", part1Array);
+// 	// console.log("part2Array:", part2Array);
+// 	return false;
+// }
+
+function isMerge(s, part1, part2) {
 	const str = part1 + part2;
 	let part1Array = [...part1];
-	console.log("part1Array:", part1Array);
 	let part2Array = [...part2];
-	console.log("part2Array:", part2Array);
 
-	console.log("s.length !== str.length:", s.length === str.length);
 	if (s.length !== str.length) {
 		return false;
 	}
 
 	for (let i = 0; i < s.length; i += 1) {
 		if (part1Array.indexOf(s[i]) === 0 && part2Array.indexOf(s[i]) === 0) {
-			if (
-				!part1Array[part1Array.indexOf(s[i]) + 1] &&
-				!part1Array.length < part1Array.indexOf(s[i]) + 1
-			) {
-				part2Array.splice(0, 1);
-			} else if (
-				!part2Array[part2Array.indexOf(s[i]) + 1] &&
-				!part2Array.length < part2Array.indexOf(s[i]) + 1
-			) {
+			if (!part1Array.length === 1) {
 				part1Array.splice(0, 1);
-			} else {
-				for (let k = 0; (k += 1); k < part1Array.length) {
-					console.log(part1Array[k]);
+				continue;
+			}
+			if (!part2Array.length === 1) {
+				console.log("!part2Array.length === 1:", !part2Array.length === 1);
+				part2Array.splice(0, 1);
+				continue;
+			}
+
+			let indexArr1 = null;
+			let indexArr2 = null;
+			for (let k = i + 1; k < s.length; k += 1) {
+				indexArr1 = part1Array.findIndex(item => {
+					return item === s[k];
+				});
+
+				indexArr2 = part2Array.findIndex(item => item === s[k]);
+
+				if (indexArr1 === indexArr2) {
+					continue;
+				}
+				if (indexArr1 > indexArr2 && indexArr2 === -1) {
+					part1Array.splice(0, 1);
+					break;
+				}
+				if (indexArr1 < indexArr2 && indexArr1 === -1) {
+					part2Array.splice(0, 1);
+
+					break;
+				}
+				if (indexArr1 > indexArr2) {
+					part2Array.splice(0, 1);
+					break;
+				}
+				if (indexArr1 < indexArr2) {
+					part1Array.splice(0, 1);
+
+					break;
 				}
 			}
 
@@ -2007,16 +2142,16 @@ console.log(isMerge("Bananas from Bahamas", "Bahas", "Bananas from am"));
 // part2 = "aTRHE9Ha`$L"
 // : expected false to equal true
 
-// console.log(isMerge("xcyc", "xc", "yc"));
-// console.log(isMerge("xcyc", "yc", "xc"));
-// console.log(isMerge("xcyc", "xc", "cy")); //true
-// console.log(isMerge("xcyc", "cy", "xc"));
+console.log(isMerge("xcyc", "xc", "yc"));
+console.log(isMerge("xcyc", "yc", "xc"));
+console.log(isMerge("xcyc", "xc", "cy")); //true
+console.log(isMerge("xcyc", "cy", "xc"));
 
-// console.log(isMerge("codewars", "code", "wars"));
-// console.log(isMerge("codewars", "cdwr", "oeas"));
-// console.log(isMerge("Making progress", "Mak pross", "inggre"));
-// console.log(isMerge("codewars", "code", "code"));
-// console.log(isMerge("More progress", "More ess", "pro"));
+console.log(isMerge("codewars", "code", "wars"));
+console.log(isMerge("codewars", "cdwr", "oeas"));
+console.log(isMerge("Making progress", "Mak pross", "inggre"));
+console.log(isMerge("codewars", "code", "code"));
+console.log(isMerge("More progress", "More ess", "pro"));
 
 //    doTest(true, "xcyc", "xc", "yc");
 // 		doTest(true, "xcyc", "yc", "xc");
