@@ -2239,3 +2239,5 @@ Example(Input --> Output)
 // 	return Math.pow(n, 3);
 // }
 // ======
+
+console.log("Hello");
