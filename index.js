@@ -2048,81 +2048,81 @@ Example(Input --> Output)
 // 	return false;
 // }
 
-function isMerge(s, part1, part2) {
-	const str = part1 + part2;
-	let part1Array = [...part1];
-	let part2Array = [...part2];
+// function isMerge(s, part1, part2) {
+// 	const str = part1 + part2;
+// 	let part1Array = [...part1];
+// 	let part2Array = [...part2];
 
-	if (s.length !== str.length) {
-		return false;
-	}
+// 	if (s.length !== str.length) {
+// 		return false;
+// 	}
 
-	for (let i = 0; i < s.length; i += 1) {
-		if (part1Array.indexOf(s[i]) === 0 && part2Array.indexOf(s[i]) === 0) {
-			if (!part1Array.length === 1) {
-				part1Array.splice(0, 1);
-				continue;
-			}
-			if (!part2Array.length === 1) {
-				console.log("!part2Array.length === 1:", !part2Array.length === 1);
-				part2Array.splice(0, 1);
-				continue;
-			}
+// 	for (let i = 0; i < s.length; i += 1) {
+// 		if (part1Array.indexOf(s[i]) === 0 && part2Array.indexOf(s[i]) === 0) {
+// 			if (!part1Array.length === 1) {
+// 				part1Array.splice(0, 1);
+// 				continue;
+// 			}
+// 			if (!part2Array.length === 1) {
+// 				console.log("!part2Array.length === 1:", !part2Array.length === 1);
+// 				part2Array.splice(0, 1);
+// 				continue;
+// 			}
 
-			let indexArr1 = null;
-			let indexArr2 = null;
-			for (let k = i + 1; k < s.length; k += 1) {
-				indexArr1 = part1Array.findIndex(item => {
-					return item === s[k];
-				});
+// 			let indexArr1 = null;
+// 			let indexArr2 = null;
+// 			for (let k = i + 1; k < s.length; k += 1) {
+// 				indexArr1 = part1Array.findIndex(item => {
+// 					return item === s[k];
+// 				});
 
-				indexArr2 = part2Array.findIndex(item => item === s[k]);
+// 				indexArr2 = part2Array.findIndex(item => item === s[k]);
 
-				if (indexArr1 === indexArr2) {
-					continue;
-				}
-				if (indexArr1 > indexArr2 && indexArr2 === -1) {
-					part1Array.splice(0, 1);
-					break;
-				}
-				if (indexArr1 < indexArr2 && indexArr1 === -1) {
-					part2Array.splice(0, 1);
+// 				if (indexArr1 === indexArr2) {
+// 					continue;
+// 				}
+// 				if (indexArr1 > indexArr2 && indexArr2 === -1) {
+// 					part1Array.splice(0, 1);
+// 					break;
+// 				}
+// 				if (indexArr1 < indexArr2 && indexArr1 === -1) {
+// 					part2Array.splice(0, 1);
 
-					break;
-				}
-				if (indexArr1 > indexArr2) {
-					part2Array.splice(0, 1);
-					break;
-				}
-				if (indexArr1 < indexArr2) {
-					part1Array.splice(0, 1);
+// 					break;
+// 				}
+// 				if (indexArr1 > indexArr2) {
+// 					part2Array.splice(0, 1);
+// 					break;
+// 				}
+// 				if (indexArr1 < indexArr2) {
+// 					part1Array.splice(0, 1);
 
-					break;
-				}
-			}
+// 					break;
+// 				}
+// 			}
 
-			continue;
-		}
+// 			continue;
+// 		}
 
-		if (part1Array.indexOf(s[i]) === 0) {
-			part1Array.splice(0, 1);
-			continue;
-		} else if (part2Array.indexOf(s[i]) === 0) {
-			part2Array.splice(0, 1);
-			continue;
-		} else {
-			return false;
-		}
-	}
+// 		if (part1Array.indexOf(s[i]) === 0) {
+// 			part1Array.splice(0, 1);
+// 			continue;
+// 		} else if (part2Array.indexOf(s[i]) === 0) {
+// 			part2Array.splice(0, 1);
+// 			continue;
+// 		} else {
+// 			return false;
+// 		}
+// 	}
 
-	if (part1Array.length === 0 && part1Array.length === 0) {
-		return true;
-	}
+// 	if (part1Array.length === 0 && part1Array.length === 0) {
+// 		return true;
+// 	}
 
-	return false;
-}
+// 	return false;
+// }
 
-console.log(isMerge("Bananas from Bahamas", "Bahas", "Bananas from am"));
+// console.log(isMerge("Bananas from Bahamas", "Bahas", "Bananas from am"));
 
 // for s = "Bananas from Bahamas"
 // part1 = "Bahas"
@@ -2142,16 +2142,16 @@ console.log(isMerge("Bananas from Bahamas", "Bahas", "Bananas from am"));
 // part2 = "aTRHE9Ha`$L"
 // : expected false to equal true
 
-console.log(isMerge("xcyc", "xc", "yc"));
-console.log(isMerge("xcyc", "yc", "xc"));
-console.log(isMerge("xcyc", "xc", "cy")); //true
-console.log(isMerge("xcyc", "cy", "xc"));
+// console.log(isMerge("xcyc", "xc", "yc"));
+// console.log(isMerge("xcyc", "yc", "xc"));
+// console.log(isMerge("xcyc", "xc", "cy")); //true
+// console.log(isMerge("xcyc", "cy", "xc"));
 
-console.log(isMerge("codewars", "code", "wars"));
-console.log(isMerge("codewars", "cdwr", "oeas"));
-console.log(isMerge("Making progress", "Mak pross", "inggre"));
-console.log(isMerge("codewars", "code", "code"));
-console.log(isMerge("More progress", "More ess", "pro"));
+// console.log(isMerge("codewars", "code", "wars"));
+// console.log(isMerge("codewars", "cdwr", "oeas"));
+// console.log(isMerge("Making progress", "Mak pross", "inggre"));
+// console.log(isMerge("codewars", "code", "code"));
+// console.log(isMerge("More progress", "More ess", "pro"));
 
 //    doTest(true, "xcyc", "xc", "yc");
 // 		doTest(true, "xcyc", "yc", "xc");
@@ -2163,3 +2163,43 @@ console.log(isMerge("More progress", "More ess", "pro"));
 // 		doTest(true, "Making progress", "Mak pross", "inggre");
 // 		doTest(false, "codewars", "code", "code");
 // 		doTest(false, "More progress", "More ess", "pro");
+
+// countSheeps;
+function countSheeps(arrayOfSheep = []) {
+	return arrayOfSheep.reduce((acc, item) => {
+		console.log("acc:", acc);
+		if (!item) {
+			return acc;
+		}
+		return (acc += 1);
+	}, 0);
+}
+
+const array1 = [
+	true,
+	true,
+	true,
+	false,
+	true,
+	true,
+	true,
+	true,
+	true,
+	false,
+	true,
+	false,
+	true,
+	false,
+	false,
+	true,
+	true,
+	true,
+	true,
+	true,
+	false,
+	false,
+	true,
+	true,
+];
+
+console.log(countSheeps(array1));
