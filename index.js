@@ -2240,4 +2240,53 @@ Example(Input --> Output)
 // }
 // ======
 
-console.log("Hello");
+// console.log("Hello");
+
+// function sum(a) {
+// 	return b => a + b;
+// }
+
+// console.log(sum(1)(1));
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+
+// function inBetween(a, b) {
+// 	return x => x >= a && x <= b;
+// }
+
+// function inArray(arr) {
+// 	return x => arr.includes(x);
+// }
+// // alert(arr.filter(inBetween(3, 6)));
+// alert(arr.filter(inArray([1, 2, 10])));
+
+// let users = [
+// 	{ name: "Іван", age: 20, surname: "Іванов" },
+// 	{ name: "Петро", age: 18, surname: "Петров" },
+// 	{ name: "Енн", age: 19, surname: "Гетевей" },
+// ];
+
+// function byField(field) {
+// 	return (a, b) => a[field].localeCompare(b[field]);
+// }
+
+// users.sort(byField("name"));
+// console.log("users:", users);
+
+const str = "Hel lo";
+
+const golos = "aeyuio";
+
+const prigolos = "qwrtpsdfghjklzxcvbnm";
+
+const arr = Array.from(str, (item, index) => {
+	let type;
+	if (golos.includes(item.toLocaleLowerCase())) {
+		type = 1;
+	} else if (prigolos.includes(item.toLocaleLowerCase())) {
+		type = 2;
+	} else {
+		type = 3;
+	}
+	return { letter: item, pos: index, type };
+});
+console.log("arr:", arr);
