@@ -2272,21 +2272,21 @@ Example(Input --> Output)
 // users.sort(byField("name"));
 // console.log("users:", users);
 
-const str = "Hel lo";
+// const str = "Hel lo";
 
-const golos = "aeyuio";
+// const golos = "aeyuio";
 
-const prigolos = "qwrtpsdfghjklzxcvbnm";
+// const prigolos = "qwrtpsdfghjklzxcvbnm";
 
-const arr = Array.from(str, (item, index) => {
-	let type;
-	if (golos.includes(item.toLocaleLowerCase())) {
-		type = 1;
-	} else if (prigolos.includes(item.toLocaleLowerCase())) {
-		type = 2;
-	} else {
-		type = 3;
-	}
-	return { letter: item, pos: index, type };
-});
-console.log("arr:", arr);
+// const arr = Array.from(str, (item, index) => {
+// 	let type;
+// 	if (golos.includes(item.toLocaleLowerCase())) {
+// 		type = 1;
+// 	} else if (prigolos.includes(item.toLocaleLowerCase())) {
+// 		type = 2;
+// 	} else {
+// 		type = 3;
+// 	}
+// 	return { letter: item, pos: index, type };
+// });
+// console.log("arr:", arr);
