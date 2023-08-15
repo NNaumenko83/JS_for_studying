@@ -2239,3 +2239,89 @@ Example(Input --> Output)
 // 	return Math.pow(n, 3);
 // }
 // ======
+
+// Map and Set
+
+// let map = new Map();
+
+// map.set(1, 2);
+// map.set("1", 3);
+// map.set("Petro", 2);
+// console.log("map:", map);
+
+// console.log(map.get("1"));
+// console.log(map.size);
+
+// Перебір Map
+// console.log(map.keys());
+// console.log(map.values());
+// console.log(map.entries());
+
+// Приклад
+// const recipeMap = new Map([
+// 	["огірок", 500],
+// 	["помідори", 350],
+// 	["цибуля", 50],
+// ]);
+
+// console.log(recipeMap);
+
+// for (let vegetable of recipeMap.keys()) {
+// 	console.log(vegetable);
+// }
+
+// for (let amount of recipeMap.values()) {
+// 	console.log("amount:", amount);
+// }
+
+// for (let enttry of recipeMap) {
+// 	console.log("enttry:", enttry);
+// }
+
+//Object.entries: Map з Object
+// let obj = {
+// 	name: "Іван",
+// 	age: 30,
+// };
+
+// const map = new Map(Object.entries(obj));
+// console.log("map:", map);
+
+// Object.fromEntries: Object з Map
+
+// function unique(arr) {
+// 	return Array.from(new Set(arr));
+// }
+
+// let values = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare", "Hare", ":-O"];
+
+// console.log(unique(values)); // Hare, Krishna, :-O
+
+// Task 2
+
+// const aclean = arr => {
+// 	let map = new Map();
+
+// 	for (let word of arr) {
+// 		let sorted = word.toLowerCase().split("").sort().join("");
+// 		map.set(sorted, word);
+// 	}
+
+// 	console.log(map);
+// };
+
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+// aclean(arr);
+
+// Task 3
+// let map = new Map();
+
+// map.set("name", "John");
+
+// // let keys = [...map.keys()];
+// let keys = Array.from(map.keys());
+
+// // Помилка: keys.push -- це не функція
+// keys.push("more");
+
+// console.log("keys:", keys);
